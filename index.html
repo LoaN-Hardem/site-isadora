@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Isadora</title>
+
+  <!-- Tipografia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/style.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1A1A1A;
+      color: #FFFFFF;
+    }
+
+    .font-roboto {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="antialiased overflow-hidden selection:bg-white/30">
+  <div id="app" class="relative w-full h-screen">
+
+    <!-- Seção 1: Tela de Entrada (Cover) -->
+    <section id="cover-section"
+      class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center transition-opacity duration-1000 z-10">
+
+      <!-- Foto de Perfil -->
+      <div
+        class="w-48 h-48 rounded-full overflow-hidden mb-6 border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+        <img src="./src/assets/img/isa.jpeg" alt="Foto de Ana" class="w-full h-full object-cover">
+      </div>
+
+      <h1 class="text-xl font-semibold tracking-wide mb-8">Isadora Carolina de lima</h1>
+
+      <!-- Card RPG -->
+      <div
+        class="font-roboto bg-white/5 border border-white/10 rounded-2xl p-6 mb-12 w-full max-w-sm backdrop-blur-md text-left text-white/80">
+        <p class="mb-3"><span class="font-medium text-white">Nome:</span> Isadora</p>
+        <p class="mb-3"><span class="font-medium text-white">Altura:</span> Perfeita</p>
+        <p class="mb-3"><span class="font-medium text-white">Peso:</span> Adequado sempre</p>
+        <p class="mb-3"><span class="font-medium text-white">Classe:</span> Namorada</p>
+        <p class="mb-3"><span class="font-medium text-white">Raridade:</span> Única</p>
+        <p><span class="font-medium text-white">Especialidade:</span> Fazer meus dias melhores</p>
+      </div>
+
+      <!-- Botão -->
+      <button id="btn-start"
+        class="px-8 py-3.5 rounded-full bg-white text-[#1A1A1A] font-medium tracking-wide hover:scale-105 active:scale-95 transition-all duration-300">
+        Iniciar Experiência
+      </button>
+    </section>
+
+    <!-- Seção 2: Introdução -->
+    <section id="intro-section"
+      class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center opacity-0 pointer-events-none transition-opacity duration-1000 z-0">
+
+      <div class="max-w-md space-y-8 font-light text-lg tracking-wider leading-relaxed text-white/90">
+        <p class="translate-y-4 opacity-0 transition-all duration-1000 delay-300 intro-text">Algumas histórias merecem
+          ser contadas.</p>
+        <p class="translate-y-4 opacity-0 transition-all duration-1000 delay-700 intro-text">Algumas pessoas merecem ser
+          lembradas.</p>
+        <p class="translate-y-4 opacity-0 transition-all duration-1000 delay-1000 intro-text">E algumas merecem uma
+          página inteira dedicada a elas.</p>
+      </div>
+
+      <button id="btn-continue"
+        class="mt-16 px-6 py-2 rounded-full border border-white/20 text-white/70 hover:bg-white/10 hover:text-white transition-colors duration-300 opacity-0 delay-1000 intro-text">
+        Continuar &darr;
+      </button>
+    </section>
+
+
+    <!-- Seção 3: A Jornada Principal -->
+    <!-- O container usa snap-y para travar a rolagem em cada capítulo no mobile -->
+    <section id="journey-section"
+      class="fixed inset-0 overflow-y-auto overflow-x-hidden z-20 opacity-0 hidden transition-opacity duration-1000 bg-[#1A1A1A] snap-y snap-mandatory">
+
+      <!-- Capítulo I: Quem é Você -->
+      <article
+        class="w-full min-h-screen snap-start flex flex-col items-center justify-center p-6 text-center pt-12 pb-12">
+        <div
+          class="chapter-content opacity-0 translate-y-12 transition-all duration-1000 ease-out flex flex-col items-center">
+          <span class="text-xs tracking-[0.3em] text-white/50 mb-3 uppercase">Capítulo I</span>
+          <h2 class="text-3xl font-semibold tracking-wide mb-8">Quem é Você</h2>
+          <div
+            class="w-60 h-80 rounded-2xl overflow-hidden mb-8 border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <img src="./src/assets/img/foto-dela-1.jpg" alt="Foto dela"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+          </div>
+          <p class="font-roboto font-light text-white/80 leading-relaxed max-w-sm text-lg px-2">
+            [Escreva aqui sobre a essência dela. O que faz dela única? O sorriso, a forma de ver o mundo, os pequenos
+            detalhes que você mais admira.]
+          </p>
+          <div class="mt-12 animate-bounce text-white/30">↓</div>
+        </div>
+      </article>
+
+      <!-- Capítulo II: Onde Tudo Começou -->
+      <article
+        class="w-full min-h-screen snap-start flex flex-col items-center justify-center p-6 text-center pt-12 pb-12">
+        <div
+          class="chapter-content opacity-0 translate-y-12 transition-all duration-1000 ease-out flex flex-col items-center">
+          <span class="text-xs tracking-[0.3em] text-white/50 mb-3 uppercase">Capítulo II</span>
+          <h2 class="text-3xl font-semibold tracking-wide mb-8">Onde Tudo Começou</h2>
+          <div
+            class="w-60 h-80 rounded-2xl overflow-hidden mb-8 border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <img src="./src/assets/img/foto-casal-1.jpg" alt="Foto dos dois"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+          </div>
+          <p class="font-roboto font-light text-white/80 leading-relaxed max-w-sm text-lg px-2">
+            [Relembre o primeiro encontro ou o momento em que você percebeu que havia algo especial. Aquele instante que
+            mudou tudo.]
+          </p>
+          <div class="mt-12 animate-bounce text-white/30">↓</div>
+        </div>
+      </article>
+
+      <!-- Capítulo III: O Que Você Trouxe -->
+      <article
+        class="w-full min-h-screen snap-start flex flex-col items-center justify-center p-6 text-center pt-12 pb-12">
+        <div
+          class="chapter-content opacity-0 translate-y-12 transition-all duration-1000 ease-out flex flex-col items-center">
+          <span class="text-xs tracking-[0.3em] text-white/50 mb-3 uppercase">Capítulo III</span>
+          <h2 class="text-3xl font-semibold tracking-wide mb-8 leading-tight">O Que Você Trouxe<br>Para Minha Vida</h2>
+          <div
+            class="w-60 h-80 rounded-2xl overflow-hidden mb-8 border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <img src="./src/assets/img/foto-dela-2.jpg" alt="Foto dela"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+          </div>
+          <p class="font-roboto font-light text-white/80 leading-relaxed max-w-sm text-lg px-2">
+            [Fale sobre o impacto positivo. A paz, a alegria, o apoio nos momentos difíceis. Como a vida ganhou novas
+            cores com ela.]
+          </p>
+          <div class="mt-12 animate-bounce text-white/30">↓</div>
+        </div>
+      </article>
+
+      <!-- Capítulo IV: O Que Construímos -->
+      <article
+        class="w-full min-h-screen snap-start flex flex-col items-center justify-center p-6 text-center pt-12 pb-12">
+        <div
+          class="chapter-content opacity-0 translate-y-12 transition-all duration-1000 ease-out flex flex-col items-center">
+          <span class="text-xs tracking-[0.3em] text-white/50 mb-3 uppercase">Capítulo IV</span>
+          <h2 class="text-3xl font-semibold tracking-wide mb-8">O Que Construímos</h2>
+          <div
+            class="w-60 h-80 rounded-2xl overflow-hidden mb-8 border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <img src="./src/assets/img/foto-casal-2.jpg" alt="Foto dos dois"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+          </div>
+          <p class="font-roboto font-light text-white/80 leading-relaxed max-w-sm text-lg px-2">
+            [Cite as memórias que criaram juntos, os obstáculos superados e a parceria que fortaleceu o relacionamento
+            até aqui.]
+          </p>
+          <div class="mt-12 animate-bounce text-white/30">↓</div>
+        </div>
+      </article>
+
+      <!-- Capítulo V: Obrigado Por Ser Você -->
+      <article
+        class="w-full min-h-screen snap-start flex flex-col items-center justify-center p-6 text-center pt-12 pb-12">
+        <div
+          class="chapter-content opacity-0 translate-y-12 transition-all duration-1000 ease-out flex flex-col items-center">
+          <span class="text-xs tracking-[0.3em] text-white/50 mb-3 uppercase">Capítulo V</span>
+          <h2 class="text-3xl font-semibold tracking-wide mb-8">Obrigado Por Ser Você</h2>
+          <div
+            class="w-60 h-80 rounded-2xl overflow-hidden mb-8 border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <img src="./src/assets/img/foto-dela-3.jpg" alt="Foto dela"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+          </div>
+          <p class="font-roboto font-light text-white/80 leading-relaxed max-w-sm text-lg px-2 mb-10">
+            [Finalize esta parte expressando sua gratidão por quem ela é, sem mudar nada, e o quanto você tem orgulho de
+            tê-la ao seu lado.]
+          </p>
+
+          <!-- Botão para a próxima etapa (a ser criada) -->
+          <button id="btn-next-phase"
+            class="px-8 py-3 rounded-full border border-white/30 text-white hover:bg-white hover:text-[#1A1A1A] transition-all duration-300">
+            Há mais uma coisa...
+          </button>
+        </div>
+      </article>
+
+    </section>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
