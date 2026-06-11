@@ -78,15 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // Ativa a seção de transição (tela quase vazia)
       transitionSection.classList.remove("hidden");
 
-      // Pequeno frame de espera para o navegador processar o display block antes do fade in
-      requestAnimationFrame(() => {
+      // Truque para garantir o fade: um micro-atraso de 50ms antes de revelar a opacidade
+      setTimeout(() => {
         transitionSection.classList.remove("opacity-0");
 
         // Revela as frases e o botão final respeitando os "delays" definidos no HTML
         transitionTexts.forEach((text) => {
           text.classList.remove("opacity-0");
         });
-      });
+      }, 50);
     }, 1000); // Aguarda o fade out da jornada terminar
   });
 
@@ -141,43 +141,34 @@ document.addEventListener("DOMContentLoaded", () => {
     finalObserver.observe(el);
   });
 
-  // Listener para o botão que levará à verdadeira última seção
+  // Elementos da Tela Final Absoluta
   const btnGoToEnd = document.getElementById("btn-go-to-end");
+  const absoluteFinalSection = document.getElementById(
+    "absolute-final-section",
+  );
+  const absoluteFinalTexts = document.querySelectorAll(".absolute-final-text");
+
+  // Transição 5: Encerramento -> Tela Final Absoluta
   btnGoToEnd.addEventListener("click", () => {
-    console.log("Iniciando a seção final absoluta...");
-    // A lógica para a seção final entrará aqui
+    // Agora a seção 5 leva 2 segundos inteiros para sumir, bem calminha...
+    finalSection.classList.add("opacity-0", "pointer-events-none");
 
-    // Elementos da Tela Final Absoluta
-    const btnGoToEnd = document.getElementById("btn-go-to-end");
-    const absoluteFinalSection = document.getElementById(
-      "absolute-final-section",
-    );
-    const absoluteFinalTexts = document.querySelectorAll(
-      ".absolute-final-text",
-    );
+    setTimeout(() => {
+      finalSection.classList.add("hidden");
 
-    // Transição 5: Encerramento -> Tela Final Absoluta
-    btnGoToEnd.addEventListener("click", () => {
-      // Inicia o fade out da Seção 5 (Encerramento e Extras)
-      finalSection.classList.add("opacity-0", "pointer-events-none");
+      // Ativa a Seção 6 (Tela Final)
+      absoluteFinalSection.classList.remove("hidden");
 
+      // Mesmo truque dos 50ms para garantir a transição mega suave do fundo
       setTimeout(() => {
-        finalSection.classList.add("hidden");
+        // Revela o fundo da última tela (vai levar 3 segundos para clarear o fundo)
+        absoluteFinalSection.classList.remove("opacity-0");
 
-        // Ativa a Seção 6 (Tela Final)
-        absoluteFinalSection.classList.remove("hidden");
-
-        // Pequeno frame de espera para o navegador aplicar o display block
-        requestAnimationFrame(() => {
-          // Revela o fundo da última tela
-          absoluteFinalSection.classList.remove("opacity-0");
-
-          // Revela as frases e o coração com os tempos perfeitamente calculados (delays do HTML)
-          absoluteFinalTexts.forEach((text) => {
-            text.classList.remove("opacity-0", "translate-y-4");
-          });
+        // Revela as frases respeitando os novos delays lentos do HTML
+        absoluteFinalTexts.forEach((text) => {
+          text.classList.remove("opacity-0", "translate-y-4");
         });
-      }, 1000); // Tempo para a seção 5 desaparecer completamente
-    });
+      }, 50);
+    }, 2000); // Aguarda exatos 2 segundos para o fade out da seção 5 terminar
   });
 });
